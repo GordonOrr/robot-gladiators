@@ -4,15 +4,13 @@ var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
 
-// you can log muttiple values at once like this
-console.log(playerName, playerAttack, playerHealth);
-
 // define our competitor's variables
-var enemyName = "Roberto";
+var enemyNames = ["Roberto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-var fight = function() {
+// define the fight function
+var fight = function(enemyName) {
     window.alert("Welcome to Robot Gladiator");
 
     // Ask the player if he wants to fight or skip
@@ -42,7 +40,7 @@ var fight = function() {
 
         // Log a resulting message to the console so we know that it worked
         console.log(
-            enemyName + " attached " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining. "
+            enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining. "
         );
 
         // check player's health
@@ -75,4 +73,6 @@ var fight = function() {
 }
 
 // execute "fight" function
-fight();
+for(var i = 0; i < enemyNames.length; i++) {
+    fight(enemyNames[i]);
+}
