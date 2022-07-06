@@ -20,6 +20,7 @@ var fight = function(enemy) {
 
       // if yes (true), leave fight
       if (confirmSkip) {
+
         window.alert(playerInfo.name + ' has decided to skip this fight. Goodbye!');
         // subtract money from playerInfo.money for skipping
         playerInfo.money = Math.max(0, playerInfo.money - 10);
@@ -28,10 +29,9 @@ var fight = function(enemy) {
       }
     }
 
-    // generate random damage value based on player's attack power
-    var damage = randomNumber(playerInfo.attack - 3, playerInfo.attack);
+    // remove enemy's health by subtracting the amount set in the playerInfo.attack variable
+    enemy.health = enemy.health - playerInfo.attack;
 
-    enemy.health = Math.max(0, enemy.health - damage);
     console.log(
       playerInfo.name + ' attacked ' + enemy.name + '. ' + enemy.name + ' now has ' + enemy.health + ' health remaining.'
     );
