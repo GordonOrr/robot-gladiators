@@ -13,6 +13,7 @@ var fight = function(enemy) {
 
       // if yes (true), leave fight
       if (confirmSkip) {
+
         window.alert(playerInfo.name + ' has decided to skip this fight. Goodbye!');
         // subtract money from playerInfo.money for skipping
         playerInfo.money = playerInfo.money - 10;
@@ -23,6 +24,7 @@ var fight = function(enemy) {
 
     // remove enemy's health by subtracting the amount set in the playerInfo.attack variable
     enemy.health = enemy.health - playerInfo.attack;
+
     console.log(
       playerInfo.name + ' attacked ' + enemy.name + '. ' + enemy.name + ' now has ' + enemy.health + ' health remaining.'
     );
